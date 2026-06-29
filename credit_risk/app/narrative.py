@@ -3,6 +3,7 @@
 import os
 from datetime import datetime, timezone
 
+import anthropic
 from anthropic import Anthropic
 
 SYSTEM_PROMPT = (
@@ -130,29 +131,69 @@ def _mock_narrative(applicant_id: str) -> dict:
     }
 
 
+def _has_api_key() -> bool:
+    key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
+    return bool(key) and key != "your_key_here"
+
+
 async def generate_credit_narrative(explanation: dict) -> dict:
     applicant_id = explanation["applicant_id"]
     generated_at = datetime.now(timezone.utc).isoformat()
 
-    if not os.environ.get("ANTHROPIC_API_KEY"):
+    if not _has_api_key():
         return _mock_narrative(applicant_id)
 
     client = Anthropic()
     user_prompt = _build_user_prompt(explanation)
 
-    response = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=1000,
-        system=SYSTEM_PROMPT,
-        messages=[{"role": "user", "content": user_prompt}],
-    )
+    try:
+        response = client.messages.create(
+            model="claude-sonnet-4-6",
+            max_tokens=1000,
+            system=SYSTEM_PROMPT,
+            messages=[{"role": "user", "content": user_prompt}],
+        )
+        narrative_text = response.content[0].text
+        recommendation = _parse_recommendation(narrative_text)
 
-    narrative_text = response.content[0].text
-    recommendation = _parse_recommendation(narrative_text)
+        return {
+            "applicant_id": applicant_id,
+            "narrative": narrative_text,
+            "recommendation": recommendation,
+            "generated_at": generated_at,
+        }
 
-    return {
-        "applicant_id": applicant_id,
-        "narrative": narrative_text,
-        "recommendation": recommendation,
-        "generated_at": generated_at,
-    }
+    except anthropic.BadRequestError as exc:
+        # Billing / credits issue — key is valid, just needs top-up
+        return {
+            "applicant_id": applicant_id,
+            "narrative": (
+                f"Claude AI is connected but your Anthropic account needs credits. "
+                f"Visit https://console.anthropic.com/settings/billing to add credits. "
+                f"(API error: {exc})"
+            ),
+            "recommendation": "REFER FOR REVIEW",
+            "generated_at": generated_at,
+        }
+
+    except anthropic.APIStatusError as exc:
+        return {
+            "applicant_id": applicant_id,
+            "narrative": (
+                f"Claude AI returned an error ({exc.status_code}): {exc.message}. "
+                f"Please check your Anthropic account settings."
+            ),
+            "recommendation": "REFER FOR REVIEW",
+            "generated_at": generated_at,
+        }
+
+    except Exception as exc:
+        return {
+            "applicant_id": applicant_id,
+            "narrative": (
+                f"Narrative generation temporarily unavailable: {exc}. "
+                f"The applicant risk score and SHAP analysis above are unaffected."
+            ),
+            "recommendation": "REFER FOR REVIEW",
+            "generated_at": generated_at,
+        }

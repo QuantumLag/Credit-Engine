@@ -5,6 +5,7 @@ router = APIRouter(prefix="/api/applicants", tags=["applicants"])
 
 @router.get("/list")
 async def list_applicants(request: Request):
+    """Return { ids: [...] } — shape expected by the Lovable frontend."""
     return request.app.state.data.get_applicant_list()
 
 
@@ -25,4 +26,4 @@ async def get_applicant(request: Request, applicant_id: str):
                 f"Available IDs: {available}"
             ),
         )
-    return data.sample_explanations[applicant_id]
+    return data.get_applicant_detail(applicant_id)

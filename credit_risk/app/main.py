@@ -11,9 +11,11 @@ from loguru import logger
 from app.inference import state
 from app.routers import applicants, dashboard, explain
 
+# Load .env from the credit_risk directory
 load_dotenv(Path(__file__).resolve().parents[1] / ".env")
 
-FRONTEND_DIST = Path(__file__).resolve().parents[1] / "frontend" / "dist"
+# New Lovable frontend build output
+FRONTEND_DIST = Path(__file__).resolve().parents[1] / "lens-credit-insight-main" / "dist"
 
 
 @asynccontextmanager
@@ -39,8 +41,11 @@ app.include_router(applicants.router)
 app.include_router(explain.router)
 
 
+# Serve the Lovable frontend as a static SPA (when built)
 if FRONTEND_DIST.exists():
-    app.mount("/assets", StaticFiles(directory=FRONTEND_DIST / "assets"), name="assets")
+    assets_dir = FRONTEND_DIST / "assets"
+    if assets_dir.exists():
+        app.mount("/assets", StaticFiles(directory=assets_dir), name="assets")
 
     @app.get("/{full_path:path}")
     async def serve_spa(full_path: str):

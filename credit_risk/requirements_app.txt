@@ -7,3 +7,5 @@ loguru
 pandas
 joblib
 numpy
+xgboost
+scikit-learn

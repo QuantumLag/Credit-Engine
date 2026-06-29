@@ -1,6 +1,5 @@
 import Gauge from '../shared/Gauge';
 
-const RISK_VARIANT = { High: 'high', Medium: 'medium', Low: 'low' };
 const RISK_COLORS = {
   High: 'var(--risk-high)',
   Medium: 'var(--risk-medium)',

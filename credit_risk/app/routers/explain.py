@@ -11,7 +11,7 @@ async def create_narrative(request: Request, body: NarrativeRequest):
     data = request.app.state.data
     applicant_id = body.applicant_id
 
-    if force:
+    if body.force:
         data.narrative_cache.pop(applicant_id, None)
 
     if applicant_id in data.narrative_cache:
