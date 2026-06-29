@@ -1,0 +1,248 @@
+{
+  "regression_model": {
+    "algorithm": "XGBoostRegressor",
+    "hyperparameters": {
+      "n_estimators": 500,
+      "learning_rate": 0.05,
+      "max_depth": 6,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "reg_alpha": 0.1,
+      "reg_lambda": 1.0,
+      "random_state": 42,
+      "n_jobs": -1,
+      "eval_metric": "rmse",
+      "early_stopping_rounds": 30
+    },
+    "test_metrics": {
+      "rmse": 0.0583,
+      "mae": 0.0426,
+      "r2": 0.8857,
+      "within_0.1_accuracy": 0.904
+    },
+    "thin_file_metrics": {
+      "rmse_thin": 0.0555,
+      "rmse_non_thin": 0.0598,
+      "fairness_flag": false
+    },
+    "top_15_features_by_gain": [
+      {
+        "feature": "ever_defaulted",
+        "importance": 0.9847
+      },
+      {
+        "feature": "alt_credit_score",
+        "importance": 0.6916
+      },
+      {
+        "feature": "emp_Gig",
+        "importance": 0.1425
+      },
+      {
+        "feature": "is_thin_file",
+        "importance": 0.0903
+      },
+      {
+        "feature": "upi_engagement_score",
+        "importance": 0.0762
+      },
+      {
+        "feature": "thin_file_confidence",
+        "importance": 0.0584
+      },
+      {
+        "feature": "emp_Salaried",
+        "importance": 0.0257
+      },
+      {
+        "feature": "emp_SelfEmployed",
+        "importance": 0.022
+      },
+      {
+        "feature": "emp_MSME",
+        "importance": 0.0185
+      },
+      {
+        "feature": "loan_amount_requested_scaled",
+        "importance": 0.0107
+      },
+      {
+        "feature": "disposable_income_inr_scaled",
+        "importance": 0.0107
+      },
+      {
+        "feature": "disposable_income_ratio",
+        "importance": 0.0105
+      },
+      {
+        "feature": "upi_inflow_avg_inr_scaled",
+        "importance": 0.0105
+      },
+      {
+        "feature": "purpose_Education",
+        "importance": 0.01
+      },
+      {
+        "feature": "expense_to_income_ratio",
+        "importance": 0.0094
+      }
+    ]
+  },
+  "classification_model": {
+    "algorithm": "XGBoostClassifier",
+    "hyperparameters": {
+      "n_estimators": 500,
+      "learning_rate": 0.05,
+      "max_depth": 6,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "reg_alpha": 0.1,
+      "reg_lambda": 1.0,
+      "use_label_encoder": false,
+      "eval_metric": "mlogloss",
+      "random_state": 42,
+      "n_jobs": -1,
+      "early_stopping_rounds": 30
+    },
+    "smote_applied": true,
+    "test_metrics": {
+      "accuracy": 0.863,
+      "weighted_f1": 0.8654,
+      "per_class_f1": {
+        "Low": 0.6133,
+        "Medium": 0.8204,
+        "High": 0.9071
+      },
+      "confusion_matrix": [
+        [
+          23,
+          7,
+          0
+        ],
+        [
+          22,
+          313,
+          44
+        ],
+        [
+          0,
+          64,
+          527
+        ]
+      ],
+      "auc_roc_macro": 0.9646
+    },
+    "thin_file_metrics": {
+      "accuracy_thin": 0.892,
+      "accuracy_non_thin": 0.8466,
+      "fairness_flag": false
+    },
+    "top_15_features_by_gain": [
+      {
+        "feature": "alt_credit_score",
+        "importance": 28.1722
+      },
+      {
+        "feature": "ever_defaulted",
+        "importance": 17.2231
+      },
+      {
+        "feature": "emp_Gig",
+        "importance": 13.2531
+      },
+      {
+        "feature": "upi_engagement_score",
+        "importance": 7.8819
+      },
+      {
+        "feature": "is_thin_file",
+        "importance": 5.9008
+      },
+      {
+        "feature": "thin_file_confidence",
+        "importance": 5.7856
+      },
+      {
+        "feature": "emp_Salaried",
+        "importance": 4.7234
+      },
+      {
+        "feature": "purpose_Home",
+        "importance": 3.6383
+      },
+      {
+        "feature": "purpose_Business",
+        "importance": 3.3558
+      },
+      {
+        "feature": "emp_MSME",
+        "importance": 3.1333
+      },
+      {
+        "feature": "emp_SelfEmployed",
+        "importance": 3.0395
+      },
+      {
+        "feature": "age_risk_band",
+        "importance": 2.4013
+      },
+      {
+        "feature": "purpose_Education",
+        "importance": 2.3239
+      },
+      {
+        "feature": "purpose_Medical",
+        "importance": 2.3046
+      },
+      {
+        "feature": "city_tier_ord",
+        "importance": 2.0301
+      }
+    ],
+    "train_class_distribution_after_smote": {
+      "Low": 2364,
+      "Medium": 2364,
+      "High": 2364
+    }
+  },
+  "data_split": {
+    "train_size": 4000,
+    "test_size": 1000,
+    "stratified": true,
+    "smote_on_train_only": true,
+    "feature_columns": [
+      "age",
+      "existing_loans_count",
+      "loan_tenure_months",
+      "ever_defaulted",
+      "is_thin_file",
+      "emi_to_income_ratio",
+      "disposable_income_ratio",
+      "loan_to_income_ratio",
+      "burden_to_income_ratio",
+      "upi_to_income_ratio",
+      "upi_engagement_score",
+      "savings_rate",
+      "expense_to_income_ratio",
+      "age_risk_band",
+      "alt_credit_score",
+      "thin_file_confidence",
+      "monthly_income_inr_scaled",
+      "disposable_income_inr_scaled",
+      "monthly_loan_burden_inr_scaled",
+      "loan_amount_requested_scaled",
+      "upi_inflow_avg_inr_scaled",
+      "emp_Salaried",
+      "emp_SelfEmployed",
+      "emp_Gig",
+      "emp_MSME",
+      "city_tier_ord",
+      "purpose_Business",
+      "purpose_Education",
+      "purpose_Medical",
+      "purpose_Home",
+      "purpose_Personal"
+    ]
+  },
+  "module_3_notes": "alt_credit_score expected to dominate importance. Check thin_file fairness_flag before proceeding to Module 4."
+}

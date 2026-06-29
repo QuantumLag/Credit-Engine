@@ -1,0 +1,118 @@
+{
+  "applicant_id": "e27718c5-737d-4fb6-9113-76e038d77b9a",
+  "is_thin_file": true,
+  "predicted_default_probability": 0.642637,
+  "predicted_risk_label": "High",
+  "class_probabilities": {
+    "Low": 0.00073,
+    "Medium": 0.008432,
+    "High": 0.990838
+  },
+  "baseline_default_probability": 0.54194,
+  "top_risk_drivers": [
+    {
+      "feature": "alt_credit_score",
+      "shap_value": 0.096025,
+      "actual_value": 520.481914,
+      "human_readable": "Credit score equivalent: 520",
+      "direction": "increases_risk",
+      "magnitude": "high"
+    },
+    {
+      "feature": "emp_Gig",
+      "shap_value": 0.053105,
+      "actual_value": 1.0,
+      "human_readable": "Employment type: Gig worker",
+      "direction": "increases_risk",
+      "magnitude": "high"
+    },
+    {
+      "feature": "upi_engagement_score",
+      "shap_value": 0.020095,
+      "actual_value": 0.16,
+      "human_readable": "UPI activity: 48 transactions/month",
+      "direction": "increases_risk",
+      "magnitude": "medium"
+    },
+    {
+      "feature": "emi_to_income_ratio",
+      "shap_value": 0.002184,
+      "actual_value": 0.0,
+      "human_readable": "EMI burden is 0% of income",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "savings_rate",
+      "shap_value": 0.001954,
+      "actual_value": 0.330939,
+      "human_readable": "Saves 33% of income monthly",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    }
+  ],
+  "top_risk_mitigants": [
+    {
+      "feature": "ever_defaulted",
+      "shap_value": -0.031939,
+      "actual_value": 0.0,
+      "human_readable": "No prior loan defaults",
+      "direction": "decreases_risk",
+      "magnitude": "medium"
+    },
+    {
+      "feature": "thin_file_confidence",
+      "shap_value": -0.025448,
+      "actual_value": 0.3,
+      "human_readable": "Alternate data confidence: 30%",
+      "direction": "decreases_risk",
+      "magnitude": "medium"
+    },
+    {
+      "feature": "is_thin_file",
+      "shap_value": -0.021194,
+      "actual_value": 1.0,
+      "human_readable": "is_thin_file: 1.0000",
+      "direction": "decreases_risk",
+      "magnitude": "medium"
+    },
+    {
+      "feature": "loan_amount_requested_scaled",
+      "shap_value": -0.001634,
+      "actual_value": -0.054469,
+      "human_readable": "Requested loan amount: INR 512686",
+      "direction": "decreases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "monthly_loan_burden_inr_scaled",
+      "shap_value": -0.001029,
+      "actual_value": -0.083871,
+      "human_readable": "Estimated monthly loan burden: INR 28483",
+      "direction": "decreases_risk",
+      "magnitude": "low"
+    }
+  ],
+  "thin_file_explanation": {
+    "alt_credit_score": 520.4819,
+    "thin_file_confidence": 0.3,
+    "alt_score_shap": 0.096025,
+    "note": "Bureau score unavailable. Assessment based on UPI behavior, cash-flow patterns, and GST compliance."
+  },
+  "feature_group_contributions": {
+    "Credit signals": 0.063898,
+    "Income & capacity": 0.005153,
+    "Loan stress": -0.001053,
+    "UPI behavior": 0.018809,
+    "Employment profile": 0.059331,
+    "Thin-file signals": -0.046642,
+    "Loan structure": 0.00144,
+    "Geography": 0.000286
+  },
+  "counterfactuals": [
+    {
+      "action": "No simple improvements identified",
+      "note": "Risk profile driven by non-actionable factors (prior default, employment type)"
+    }
+  ]
+}

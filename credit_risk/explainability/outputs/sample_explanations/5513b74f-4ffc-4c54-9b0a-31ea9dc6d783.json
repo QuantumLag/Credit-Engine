@@ -1,0 +1,113 @@
+{
+  "applicant_id": "5513b74f-4ffc-4c54-9b0a-31ea9dc6d783",
+  "is_thin_file": false,
+  "predicted_default_probability": 0.603629,
+  "predicted_risk_label": "High",
+  "class_probabilities": {
+    "Low": 0.004644,
+    "Medium": 0.031422,
+    "High": 0.963935
+  },
+  "baseline_default_probability": 0.54194,
+  "top_risk_drivers": [
+    {
+      "feature": "alt_credit_score",
+      "shap_value": 0.160823,
+      "actual_value": 451.0,
+      "human_readable": "Credit score equivalent: 451",
+      "direction": "increases_risk",
+      "magnitude": "high"
+    },
+    {
+      "feature": "upi_to_income_ratio",
+      "shap_value": 0.002919,
+      "actual_value": 1.129507,
+      "human_readable": "upi_to_income_ratio: 1.1295",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "age",
+      "shap_value": 0.00161,
+      "actual_value": 39.0,
+      "human_readable": "Age: 39 years",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "emp_MSME",
+      "shap_value": 0.001548,
+      "actual_value": 0.0,
+      "human_readable": "emp_MSME: 0.0000",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "loan_amount_requested_scaled",
+      "shap_value": 0.001134,
+      "actual_value": 0.424221,
+      "human_readable": "Requested loan amount: INR 667466",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    }
+  ],
+  "top_risk_mitigants": [
+    {
+      "feature": "upi_engagement_score",
+      "shap_value": -0.037936,
+      "actual_value": 0.786667,
+      "human_readable": "UPI activity: 236 transactions/month",
+      "direction": "decreases_risk",
+      "magnitude": "medium"
+    },
+    {
+      "feature": "ever_defaulted",
+      "shap_value": -0.036712,
+      "actual_value": 0.0,
+      "human_readable": "No prior loan defaults",
+      "direction": "decreases_risk",
+      "magnitude": "medium"
+    },
+    {
+      "feature": "emp_Gig",
+      "shap_value": -0.020334,
+      "actual_value": 0.0,
+      "human_readable": "emp_Gig: 0.0000",
+      "direction": "decreases_risk",
+      "magnitude": "medium"
+    },
+    {
+      "feature": "emp_SelfEmployed",
+      "shap_value": -0.005594,
+      "actual_value": 1.0,
+      "human_readable": "Employment type: Self-employed",
+      "direction": "decreases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "emp_Salaried",
+      "shap_value": -0.003482,
+      "actual_value": 0.0,
+      "human_readable": "emp_Salaried: 0.0000",
+      "direction": "decreases_risk",
+      "magnitude": "low"
+    }
+  ],
+  "thin_file_explanation": null,
+  "feature_group_contributions": {
+    "Credit signals": 0.124021,
+    "Income & capacity": -0.001741,
+    "Loan stress": 0.000564,
+    "UPI behavior": -0.036477,
+    "Employment profile": -0.026001,
+    "Thin-file signals": 0.001554,
+    "Loan structure": 0.000533,
+    "Geography": 0.000215
+  },
+  "counterfactuals": [
+    {
+      "action": "No simple improvements identified",
+      "note": "Risk profile driven by non-actionable factors (prior default, employment type)"
+    }
+  ]
+}

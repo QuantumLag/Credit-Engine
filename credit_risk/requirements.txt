@@ -1,0 +1,11 @@
+pandas
+numpy
+faker
+scikit-learn>=1.3.0
+pydantic
+loguru
+pytest
+xgboost
+imbalanced-learn
+joblib
+shap>=0.44.0

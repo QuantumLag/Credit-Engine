@@ -1,0 +1,113 @@
+{
+  "applicant_id": "3fac4317-16e8-47b0-8552-f3c55f13fb98",
+  "is_thin_file": false,
+  "predicted_default_probability": 0.246425,
+  "predicted_risk_label": "Low",
+  "class_probabilities": {
+    "Low": 0.696761,
+    "Medium": 0.292955,
+    "High": 0.010284
+  },
+  "baseline_default_probability": 0.54194,
+  "top_risk_drivers": [
+    {
+      "feature": "upi_inflow_avg_inr_scaled",
+      "shap_value": 0.012525,
+      "actual_value": 4.168043,
+      "human_readable": "Average UPI inflow: INR 161875",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "monthly_loan_burden_inr_scaled",
+      "shap_value": 0.003842,
+      "actual_value": -0.829448,
+      "human_readable": "Estimated monthly loan burden: INR 1371",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "disposable_income_inr_scaled",
+      "shap_value": 0.003333,
+      "actual_value": 2.745862,
+      "human_readable": "Disposable income: INR 44244",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "burden_to_income_ratio",
+      "shap_value": 0.002846,
+      "actual_value": 0.009461,
+      "human_readable": "Monthly loan repayment would be 1% of income",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "emp_SelfEmployed",
+      "shap_value": 0.0025,
+      "actual_value": 0.0,
+      "human_readable": "emp_SelfEmployed: 0.0000",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    }
+  ],
+  "top_risk_mitigants": [
+    {
+      "feature": "alt_credit_score",
+      "shap_value": -0.223456,
+      "actual_value": 837.0,
+      "human_readable": "Credit score equivalent: 837",
+      "direction": "decreases_risk",
+      "magnitude": "high"
+    },
+    {
+      "feature": "upi_engagement_score",
+      "shap_value": -0.045192,
+      "actual_value": 0.566667,
+      "human_readable": "UPI activity: 170 transactions/month",
+      "direction": "decreases_risk",
+      "magnitude": "medium"
+    },
+    {
+      "feature": "ever_defaulted",
+      "shap_value": -0.030778,
+      "actual_value": 0.0,
+      "human_readable": "No prior loan defaults",
+      "direction": "decreases_risk",
+      "magnitude": "medium"
+    },
+    {
+      "feature": "emp_Gig",
+      "shap_value": -0.024366,
+      "actual_value": 0.0,
+      "human_readable": "emp_Gig: 0.0000",
+      "direction": "decreases_risk",
+      "magnitude": "medium"
+    },
+    {
+      "feature": "upi_to_income_ratio",
+      "shap_value": -0.001108,
+      "actual_value": 1.117022,
+      "human_readable": "upi_to_income_ratio: 1.1170",
+      "direction": "decreases_risk",
+      "magnitude": "low"
+    }
+  ],
+  "thin_file_explanation": null,
+  "feature_group_contributions": {
+    "Credit signals": -0.254365,
+    "Income & capacity": 0.004223,
+    "Loan stress": 0.00559,
+    "UPI behavior": -0.033775,
+    "Employment profile": -0.017755,
+    "Thin-file signals": -0.000193,
+    "Loan structure": 0.000531,
+    "Geography": 2.6e-05
+  },
+  "counterfactuals": [
+    {
+      "action": "No simple improvements identified",
+      "note": "Risk profile driven by non-actionable factors (prior default, employment type)"
+    }
+  ]
+}

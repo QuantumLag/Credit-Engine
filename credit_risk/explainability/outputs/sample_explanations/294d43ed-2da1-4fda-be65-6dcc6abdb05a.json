@@ -1,0 +1,124 @@
+{
+  "applicant_id": "294d43ed-2da1-4fda-be65-6dcc6abdb05a",
+  "is_thin_file": true,
+  "predicted_default_probability": 0.508291,
+  "predicted_risk_label": "Medium",
+  "class_probabilities": {
+    "Low": 0.005143,
+    "Medium": 0.595727,
+    "High": 0.39913
+  },
+  "baseline_default_probability": 0.54194,
+  "top_risk_drivers": [
+    {
+      "feature": "upi_engagement_score",
+      "shap_value": 0.040725,
+      "actual_value": 0.343333,
+      "human_readable": "UPI activity: 103 transactions/month",
+      "direction": "increases_risk",
+      "magnitude": "medium"
+    },
+    {
+      "feature": "monthly_loan_burden_inr_scaled",
+      "shap_value": 0.003039,
+      "actual_value": 0.248235,
+      "human_readable": "Estimated monthly loan burden: INR 40559",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "emp_SelfEmployed",
+      "shap_value": 0.002126,
+      "actual_value": 0.0,
+      "human_readable": "emp_SelfEmployed: 0.0000",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "emi_to_income_ratio",
+      "shap_value": 0.000941,
+      "actual_value": 0.070517,
+      "human_readable": "EMI burden is 7% of income",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "is_thin_file",
+      "shap_value": 0.000926,
+      "actual_value": 1.0,
+      "human_readable": "is_thin_file: 1.0000",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    }
+  ],
+  "top_risk_mitigants": [
+    {
+      "feature": "ever_defaulted",
+      "shap_value": -0.026902,
+      "actual_value": 0.0,
+      "human_readable": "No prior loan defaults",
+      "direction": "decreases_risk",
+      "magnitude": "medium"
+    },
+    {
+      "feature": "alt_credit_score",
+      "shap_value": -0.020128,
+      "actual_value": 601.346456,
+      "human_readable": "Credit score equivalent: 601",
+      "direction": "decreases_risk",
+      "magnitude": "medium"
+    },
+    {
+      "feature": "emp_Gig",
+      "shap_value": -0.01889,
+      "actual_value": 0.0,
+      "human_readable": "emp_Gig: 0.0000",
+      "direction": "decreases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "emp_MSME",
+      "shap_value": -0.005688,
+      "actual_value": 1.0,
+      "human_readable": "Employment type: MSME owner",
+      "direction": "decreases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "age",
+      "shap_value": -0.002931,
+      "actual_value": 56.0,
+      "human_readable": "Age: 56 years",
+      "direction": "decreases_risk",
+      "magnitude": "low"
+    }
+  ],
+  "thin_file_explanation": {
+    "alt_credit_score": 601.3465,
+    "thin_file_confidence": 1.0,
+    "alt_score_shap": -0.020128,
+    "note": "Bureau score unavailable. Assessment based on UPI behavior, cash-flow patterns, and GST compliance."
+  },
+  "feature_group_contributions": {
+    "Credit signals": -0.046856,
+    "Income & capacity": 0.000582,
+    "Loan stress": 0.002737,
+    "UPI behavior": 0.039303,
+    "Employment profile": -0.02808,
+    "Thin-file signals": -0.00193,
+    "Loan structure": 6.6e-05,
+    "Geography": -0.000156
+  },
+  "counterfactuals": [
+    {
+      "action": "Increase UPI transaction activity",
+      "feature": "upi_engagement_score",
+      "current_value_human": "UPI activity: 103 transactions/month",
+      "suggested_value_human": "UPI activity: 162 transactions/month",
+      "estimated_probability_reduction": 0.059648,
+      "new_predicted_probability": 0.448643,
+      "new_risk_label": "Medium",
+      "feasibility": "hard"
+    }
+  ]
+}

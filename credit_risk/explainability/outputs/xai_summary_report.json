@@ -1,0 +1,285 @@
+{
+  "global_shap": {
+    "regression_global_importance": [
+      {
+        "feature": "alt_credit_score",
+        "mean_abs_shap": 0.100369,
+        "rank": 1
+      },
+      {
+        "feature": "ever_defaulted",
+        "mean_abs_shap": 0.049684,
+        "rank": 2
+      },
+      {
+        "feature": "upi_engagement_score",
+        "mean_abs_shap": 0.037952,
+        "rank": 3
+      },
+      {
+        "feature": "emp_Gig",
+        "mean_abs_shap": 0.028754,
+        "rank": 4
+      },
+      {
+        "feature": "thin_file_confidence",
+        "mean_abs_shap": 0.005317,
+        "rank": 5
+      },
+      {
+        "feature": "is_thin_file",
+        "mean_abs_shap": 0.005211,
+        "rank": 6
+      },
+      {
+        "feature": "emp_SelfEmployed",
+        "mean_abs_shap": 0.003199,
+        "rank": 7
+      },
+      {
+        "feature": "emp_MSME",
+        "mean_abs_shap": 0.002045,
+        "rank": 8
+      },
+      {
+        "feature": "emp_Salaried",
+        "mean_abs_shap": 0.00193,
+        "rank": 9
+      },
+      {
+        "feature": "upi_inflow_avg_inr_scaled",
+        "mean_abs_shap": 0.001675,
+        "rank": 10
+      },
+      {
+        "feature": "disposable_income_ratio",
+        "mean_abs_shap": 0.001665,
+        "rank": 11
+      },
+      {
+        "feature": "loan_amount_requested_scaled",
+        "mean_abs_shap": 0.001509,
+        "rank": 12
+      },
+      {
+        "feature": "disposable_income_inr_scaled",
+        "mean_abs_shap": 0.001192,
+        "rank": 13
+      },
+      {
+        "feature": "age",
+        "mean_abs_shap": 0.001093,
+        "rank": 14
+      },
+      {
+        "feature": "upi_to_income_ratio",
+        "mean_abs_shap": 0.001075,
+        "rank": 15
+      },
+      {
+        "feature": "emi_to_income_ratio",
+        "mean_abs_shap": 0.001038,
+        "rank": 16
+      },
+      {
+        "feature": "monthly_loan_burden_inr_scaled",
+        "mean_abs_shap": 0.001004,
+        "rank": 17
+      },
+      {
+        "feature": "savings_rate",
+        "mean_abs_shap": 0.000984,
+        "rank": 18
+      },
+      {
+        "feature": "burden_to_income_ratio",
+        "mean_abs_shap": 0.000906,
+        "rank": 19
+      },
+      {
+        "feature": "monthly_income_inr_scaled",
+        "mean_abs_shap": 0.000861,
+        "rank": 20
+      }
+    ],
+    "classification_high_risk_importance": [
+      {
+        "feature": "alt_credit_score",
+        "mean_abs_shap": 1.339625,
+        "rank": 1
+      },
+      {
+        "feature": "upi_engagement_score",
+        "mean_abs_shap": 0.49729,
+        "rank": 2
+      },
+      {
+        "feature": "emp_Gig",
+        "mean_abs_shap": 0.429233,
+        "rank": 3
+      },
+      {
+        "feature": "ever_defaulted",
+        "mean_abs_shap": 0.416951,
+        "rank": 4
+      },
+      {
+        "feature": "is_thin_file",
+        "mean_abs_shap": 0.132208,
+        "rank": 5
+      },
+      {
+        "feature": "thin_file_confidence",
+        "mean_abs_shap": 0.097164,
+        "rank": 6
+      },
+      {
+        "feature": "emp_Salaried",
+        "mean_abs_shap": 0.084961,
+        "rank": 7
+      },
+      {
+        "feature": "purpose_Personal",
+        "mean_abs_shap": 0.076545,
+        "rank": 8
+      },
+      {
+        "feature": "upi_inflow_avg_inr_scaled",
+        "mean_abs_shap": 0.053619,
+        "rank": 9
+      },
+      {
+        "feature": "emi_to_income_ratio",
+        "mean_abs_shap": 0.052098,
+        "rank": 10
+      },
+      {
+        "feature": "emp_SelfEmployed",
+        "mean_abs_shap": 0.045756,
+        "rank": 11
+      },
+      {
+        "feature": "upi_to_income_ratio",
+        "mean_abs_shap": 0.041955,
+        "rank": 12
+      },
+      {
+        "feature": "purpose_Home",
+        "mean_abs_shap": 0.040158,
+        "rank": 13
+      },
+      {
+        "feature": "age",
+        "mean_abs_shap": 0.037921,
+        "rank": 14
+      },
+      {
+        "feature": "loan_amount_requested_scaled",
+        "mean_abs_shap": 0.03425,
+        "rank": 15
+      },
+      {
+        "feature": "emp_MSME",
+        "mean_abs_shap": 0.032668,
+        "rank": 16
+      },
+      {
+        "feature": "savings_rate",
+        "mean_abs_shap": 0.03239,
+        "rank": 17
+      },
+      {
+        "feature": "existing_loans_count",
+        "mean_abs_shap": 0.031232,
+        "rank": 18
+      },
+      {
+        "feature": "purpose_Business",
+        "mean_abs_shap": 0.025562,
+        "rank": 19
+      },
+      {
+        "feature": "monthly_income_inr_scaled",
+        "mean_abs_shap": 0.021836,
+        "rank": 20
+      }
+    ],
+    "feature_group_importance": {
+      "Credit signals": {
+        "reg_importance": 0.150397,
+        "clf_importance": 1.787808,
+        "rank": 1
+      },
+      "Employment profile": {
+        "reg_importance": 0.037257,
+        "clf_importance": 0.636582,
+        "rank": 2
+      },
+      "UPI behavior": {
+        "reg_importance": 0.040702,
+        "clf_importance": 0.592864,
+        "rank": 3
+      },
+      "Thin-file signals": {
+        "reg_importance": 0.010529,
+        "clf_importance": 0.229372,
+        "rank": 4
+      },
+      "Loan structure": {
+        "reg_importance": 0.002457,
+        "clf_importance": 0.180288,
+        "rank": 5
+      },
+      "Income & capacity": {
+        "reg_importance": 0.005739,
+        "clf_importance": 0.148485,
+        "rank": 6
+      },
+      "Loan stress": {
+        "reg_importance": 0.004053,
+        "clf_importance": 0.080228,
+        "rank": 7
+      },
+      "Geography": {
+        "reg_importance": 0.000263,
+        "clf_importance": 0.016671,
+        "rank": 8
+      }
+    },
+    "expected_value_reg": 0.54194,
+    "expected_value_clf_high": -0.062702
+  },
+  "thin_file_xai": {
+    "thin_file_test_count": 361,
+    "mean_predicted_prob_thin": 0.547951,
+    "mean_predicted_prob_non_thin": 0.534145,
+    "mean_shap_alt_credit_score_thin": 0.024883,
+    "mean_shap_upi_engagement_thin": -0.000318,
+    "mean_shap_thin_file_confidence": -0.005336,
+    "mean_shap_emp_gig_thin": -0.00338,
+    "mean_shap_emp_msme_thin": -0.000199,
+    "mean_alt_credit_score_shap_non_thin_proxy": -0.008801,
+    "interpretation": "For thin-file borrowers, UPI behavior and alternate credit score contribute 40.8% of total explainable risk signal, replacing the bureau score used for standard applicants."
+  },
+  "sample_applicants_generated": 10,
+  "explanation_schema_version": "1.0",
+  "top_3_global_risk_drivers": [
+    {
+      "feature": "alt_credit_score",
+      "mean_abs_shap": 0.100369,
+      "group": "Credit signals"
+    },
+    {
+      "feature": "ever_defaulted",
+      "mean_abs_shap": 0.049684,
+      "group": "Credit signals"
+    },
+    {
+      "feature": "upi_engagement_score",
+      "mean_abs_shap": 0.037952,
+      "group": "UPI behavior"
+    }
+  ],
+  "counterfactual_coverage": 0.2,
+  "module_4_notes": "Explanations ready for LLM narrative generation in Module 6. Thin-file borrowers have complete alternate explanations. Counterfactuals target only actionable features."
+}

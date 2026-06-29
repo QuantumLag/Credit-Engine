@@ -1,0 +1,143 @@
+{
+  "columns": [
+    "applicant_id",
+    "age",
+    "existing_loans_count",
+    "loan_tenure_months",
+    "ever_defaulted",
+    "is_thin_file",
+    "emi_to_income_ratio",
+    "disposable_income_ratio",
+    "loan_to_income_ratio",
+    "burden_to_income_ratio",
+    "upi_to_income_ratio",
+    "upi_engagement_score",
+    "savings_rate",
+    "expense_to_income_ratio",
+    "age_risk_band",
+    "alt_credit_score",
+    "thin_file_confidence",
+    "monthly_income_inr_scaled",
+    "disposable_income_inr_scaled",
+    "monthly_loan_burden_inr_scaled",
+    "loan_amount_requested_scaled",
+    "upi_inflow_avg_inr_scaled",
+    "alt_credit_score_scaled",
+    "emp_Salaried",
+    "emp_SelfEmployed",
+    "emp_Gig",
+    "emp_MSME",
+    "city_tier_ord",
+    "purpose_Business",
+    "purpose_Education",
+    "purpose_Medical",
+    "purpose_Home",
+    "purpose_Personal",
+    "default_probability",
+    "risk_label"
+  ],
+  "column_types": {
+    "applicant_id": "str",
+    "age": "int64",
+    "existing_loans_count": "int64",
+    "loan_tenure_months": "int64",
+    "ever_defaulted": "int64",
+    "is_thin_file": "int64",
+    "emi_to_income_ratio": "float64",
+    "disposable_income_ratio": "float64",
+    "loan_to_income_ratio": "float64",
+    "burden_to_income_ratio": "float64",
+    "upi_to_income_ratio": "float64",
+    "upi_engagement_score": "float64",
+    "savings_rate": "float64",
+    "expense_to_income_ratio": "float64",
+    "age_risk_band": "int64",
+    "alt_credit_score": "float64",
+    "thin_file_confidence": "float64",
+    "monthly_income_inr_scaled": "float64",
+    "disposable_income_inr_scaled": "float64",
+    "monthly_loan_burden_inr_scaled": "float64",
+    "loan_amount_requested_scaled": "float64",
+    "upi_inflow_avg_inr_scaled": "float64",
+    "alt_credit_score_scaled": "float64",
+    "emp_Salaried": "int64",
+    "emp_SelfEmployed": "int64",
+    "emp_Gig": "int64",
+    "emp_MSME": "int64",
+    "city_tier_ord": "int64",
+    "purpose_Business": "int64",
+    "purpose_Education": "int64",
+    "purpose_Medical": "int64",
+    "purpose_Home": "int64",
+    "purpose_Personal": "int64",
+    "default_probability": "float64",
+    "risk_label": "str"
+  },
+  "model_input_columns": [
+    "age",
+    "existing_loans_count",
+    "loan_tenure_months",
+    "ever_defaulted",
+    "is_thin_file",
+    "emi_to_income_ratio",
+    "disposable_income_ratio",
+    "loan_to_income_ratio",
+    "burden_to_income_ratio",
+    "upi_to_income_ratio",
+    "upi_engagement_score",
+    "savings_rate",
+    "expense_to_income_ratio",
+    "age_risk_band",
+    "alt_credit_score",
+    "thin_file_confidence",
+    "monthly_income_inr_scaled",
+    "disposable_income_inr_scaled",
+    "monthly_loan_burden_inr_scaled",
+    "loan_amount_requested_scaled",
+    "upi_inflow_avg_inr_scaled",
+    "alt_credit_score_scaled",
+    "emp_Salaried",
+    "emp_SelfEmployed",
+    "emp_Gig",
+    "emp_MSME",
+    "city_tier_ord",
+    "purpose_Business",
+    "purpose_Education",
+    "purpose_Medical",
+    "purpose_Home",
+    "purpose_Personal"
+  ],
+  "target_columns": [
+    "default_probability",
+    "risk_label"
+  ],
+  "excluded_from_model": [
+    "applicant_id"
+  ],
+  "scaler_params": {
+    "monthly_income_inr": {
+      "mean": 42143.461626,
+      "scale": 28267.992318916222
+    },
+    "disposable_income_inr": {
+      "mean": 11396.397664,
+      "scale": 11962.573304672647
+    },
+    "monthly_loan_burden_inr": {
+      "mean": 31532.339575919443,
+      "scale": 36363.13207203459
+    },
+    "loan_amount_requested": {
+      "mean": 530297.747282,
+      "scale": 323341.45227691374
+    },
+    "upi_inflow_avg_inr": {
+      "mean": 42105.523242,
+      "scale": 28735.236048612882
+    },
+    "alt_credit_score": {
+      "mean": 593.9624171578054,
+      "scale": 143.69410524854263
+    }
+  }
+}

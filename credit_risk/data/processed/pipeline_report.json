@@ -1,0 +1,17 @@
+{
+  "total_records_generated": 5000,
+  "records_after_cleaning": 5000,
+  "thin_file_count": 1778,
+  "risk_label_distribution": {
+    "High": 2955,
+    "Low": 148,
+    "Medium": 1897
+  },
+  "employment_type_distribution": {
+    "Salaried": 1738,
+    "Self-employed": 1252,
+    "Gig": 1272,
+    "MSME": 738
+  },
+  "mean_default_probability": 0.5418
+}

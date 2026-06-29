@@ -1,0 +1,118 @@
+{
+  "applicant_id": "2ab7b2ef-8e0e-4033-ac59-1da8fff96acf",
+  "is_thin_file": true,
+  "predicted_default_probability": 0.470786,
+  "predicted_risk_label": "Medium",
+  "class_probabilities": {
+    "Low": 0.002947,
+    "Medium": 0.87352,
+    "High": 0.123533
+  },
+  "baseline_default_probability": 0.54194,
+  "top_risk_drivers": [
+    {
+      "feature": "is_thin_file",
+      "shap_value": 0.005085,
+      "actual_value": 1.0,
+      "human_readable": "is_thin_file: 1.0000",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "thin_file_confidence",
+      "shap_value": 0.003809,
+      "actual_value": 0.8,
+      "human_readable": "Alternate data confidence: 80%",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "disposable_income_ratio",
+      "shap_value": 0.002882,
+      "actual_value": 0.405678,
+      "human_readable": "Disposable income is 41% of monthly income",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "disposable_income_inr_scaled",
+      "shap_value": 0.002305,
+      "actual_value": 0.487486,
+      "human_readable": "Disposable income: INR 17228",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "expense_to_income_ratio",
+      "shap_value": 0.001124,
+      "actual_value": 0.501692,
+      "human_readable": "expense_to_income_ratio: 0.5017",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    }
+  ],
+  "top_risk_mitigants": [
+    {
+      "feature": "upi_engagement_score",
+      "shap_value": -0.030767,
+      "actual_value": 0.596667,
+      "human_readable": "UPI activity: 179 transactions/month",
+      "direction": "decreases_risk",
+      "magnitude": "medium"
+    },
+    {
+      "feature": "ever_defaulted",
+      "shap_value": -0.027209,
+      "actual_value": 0.0,
+      "human_readable": "No prior loan defaults",
+      "direction": "decreases_risk",
+      "magnitude": "medium"
+    },
+    {
+      "feature": "emp_Gig",
+      "shap_value": -0.018049,
+      "actual_value": 0.0,
+      "human_readable": "emp_Gig: 0.0000",
+      "direction": "decreases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "alt_credit_score",
+      "shap_value": -0.008445,
+      "actual_value": 590.285132,
+      "human_readable": "Credit score equivalent: 590",
+      "direction": "decreases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "emp_SelfEmployed",
+      "shap_value": -0.003962,
+      "actual_value": 1.0,
+      "human_readable": "Employment type: Self-employed",
+      "direction": "decreases_risk",
+      "magnitude": "low"
+    }
+  ],
+  "thin_file_explanation": {
+    "alt_credit_score": 590.2851,
+    "thin_file_confidence": 0.8,
+    "alt_score_shap": -0.008445,
+    "note": "Bureau score unavailable. Assessment based on UPI behavior, cash-flow patterns, and GST compliance."
+  },
+  "feature_group_contributions": {
+    "Credit signals": -0.036062,
+    "Income & capacity": 0.005894,
+    "Loan stress": -0.001836,
+    "UPI behavior": -0.030271,
+    "Employment profile": -0.020164,
+    "Thin-file signals": 0.008894,
+    "Loan structure": 0.001077,
+    "Geography": 0.000189
+  },
+  "counterfactuals": [
+    {
+      "action": "No simple improvements identified",
+      "note": "Risk profile driven by non-actionable factors (prior default, employment type)"
+    }
+  ]
+}

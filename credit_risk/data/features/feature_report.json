@@ -1,0 +1,62 @@
+{
+  "total_features": 35,
+  "model_input_features": 32,
+  "thin_file_segment": {
+    "count": 1778,
+    "mean_alt_credit_score": 575.2576,
+    "mean_thin_file_confidence": 0.6376
+  },
+  "non_thin_file_segment": {
+    "count": 3222,
+    "mean_bureau_score": 604.2843
+  },
+  "top_correlated_with_default": [
+    {
+      "feature": "alt_credit_score",
+      "correlation": -0.7185
+    },
+    {
+      "feature": "alt_credit_score_scaled",
+      "correlation": -0.7185
+    },
+    {
+      "feature": "ever_defaulted",
+      "correlation": 0.477
+    },
+    {
+      "feature": "emp_Gig",
+      "correlation": 0.2359
+    },
+    {
+      "feature": "upi_engagement_score",
+      "correlation": -0.2288
+    }
+  ],
+  "class_imbalance_note": "High:2955 Medium:1897 Low:148 - Module 3 must use class_weight or SMOTE",
+  "scaler_params": {
+    "monthly_income_inr": {
+      "mean": 42143.461626,
+      "scale": 28267.992318916222
+    },
+    "disposable_income_inr": {
+      "mean": 11396.397664,
+      "scale": 11962.573304672647
+    },
+    "monthly_loan_burden_inr": {
+      "mean": 31532.339575919443,
+      "scale": 36363.13207203459
+    },
+    "loan_amount_requested": {
+      "mean": 530297.747282,
+      "scale": 323341.45227691374
+    },
+    "upi_inflow_avg_inr": {
+      "mean": 42105.523242,
+      "scale": 28735.236048612882
+    },
+    "alt_credit_score": {
+      "mean": 593.9624171578054,
+      "scale": 143.69410524854263
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "applicant_id": "0f44704f-1247-4a4e-a469-98e8d39e198b",
+  "is_thin_file": false,
+  "predicted_default_probability": 0.215472,
+  "predicted_risk_label": "Low",
+  "class_probabilities": {
+    "Low": 0.655539,
+    "Medium": 0.328569,
+    "High": 0.015892
+  },
+  "baseline_default_probability": 0.54194,
+  "top_risk_drivers": [
+    {
+      "feature": "upi_inflow_avg_inr_scaled",
+      "shap_value": 0.003711,
+      "actual_value": 0.735446,
+      "human_readable": "Average UPI inflow: INR 63239",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "age",
+      "shap_value": 0.002053,
+      "actual_value": 27.0,
+      "human_readable": "Age: 27 years",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "monthly_income_inr_scaled",
+      "shap_value": 0.001771,
+      "actual_value": 0.655772,
+      "human_readable": "Monthly income: INR 60681",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "emi_to_income_ratio",
+      "shap_value": 0.001712,
+      "actual_value": 0.304779,
+      "human_readable": "EMI burden is 30% of income",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "purpose_Education",
+      "shap_value": 0.000722,
+      "actual_value": 0.0,
+      "human_readable": "purpose_Education: 0.0000",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    }
+  ],
+  "top_risk_mitigants": [
+    {
+      "feature": "alt_credit_score",
+      "shap_value": -0.218577,
+      "actual_value": 757.0,
+      "human_readable": "Credit score equivalent: 757",
+      "direction": "decreases_risk",
+      "magnitude": "high"
+    },
+    {
+      "feature": "upi_engagement_score",
+      "shap_value": -0.045724,
+      "actual_value": 0.62,
+      "human_readable": "UPI activity: 186 transactions/month",
+      "direction": "decreases_risk",
+      "magnitude": "medium"
+    },
+    {
+      "feature": "ever_defaulted",
+      "shap_value": -0.034225,
+      "actual_value": 0.0,
+      "human_readable": "No prior loan defaults",
+      "direction": "decreases_risk",
+      "magnitude": "medium"
+    },
+    {
+      "feature": "emp_Gig",
+      "shap_value": -0.020383,
+      "actual_value": 0.0,
+      "human_readable": "emp_Gig: 0.0000",
+      "direction": "decreases_risk",
+      "magnitude": "medium"
+    },
+    {
+      "feature": "emp_MSME",
+      "shap_value": -0.010155,
+      "actual_value": 1.0,
+      "human_readable": "Employment type: MSME owner",
+      "direction": "decreases_risk",
+      "magnitude": "low"
+    }
+  ],
+  "thin_file_explanation": null,
+  "feature_group_contributions": {
+    "Credit signals": -0.252796,
+    "Income & capacity": 0.001163,
+    "Loan stress": -0.001482,
+    "UPI behavior": -0.04319,
+    "Employment profile": -0.02943,
+    "Thin-file signals": -0.000615,
+    "Loan structure": -0.000441,
+    "Geography": 0.000325
+  },
+  "counterfactuals": [
+    {
+      "action": "No simple improvements identified",
+      "note": "Risk profile driven by non-actionable factors (prior default, employment type)"
+    }
+  ]
+}

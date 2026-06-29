@@ -1,0 +1,139 @@
+{
+  "applicant_id": "82ec0fc3-7c0a-4867-bcce-521367899d92",
+  "is_thin_file": false,
+  "predicted_default_probability": 0.283669,
+  "predicted_risk_label": "Medium",
+  "class_probabilities": {
+    "Low": 0.46046,
+    "Medium": 0.523419,
+    "High": 0.016121
+  },
+  "baseline_default_probability": 0.54194,
+  "top_risk_drivers": [
+    {
+      "feature": "upi_engagement_score",
+      "shap_value": 0.053574,
+      "actual_value": 0.486667,
+      "human_readable": "UPI activity: 146 transactions/month",
+      "direction": "increases_risk",
+      "magnitude": "high"
+    },
+    {
+      "feature": "monthly_loan_burden_inr_scaled",
+      "shap_value": 0.00195,
+      "actual_value": -0.813218,
+      "human_readable": "Estimated monthly loan burden: INR 1961",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "emp_MSME",
+      "shap_value": 0.001311,
+      "actual_value": 0.0,
+      "human_readable": "emp_MSME: 0.0000",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "savings_rate",
+      "shap_value": 0.001166,
+      "actual_value": 0.475406,
+      "human_readable": "Saves 48% of income monthly",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "purpose_Personal",
+      "shap_value": 0.001145,
+      "actual_value": 1.0,
+      "human_readable": "purpose_Personal: 1.0000",
+      "direction": "increases_risk",
+      "magnitude": "low"
+    }
+  ],
+  "top_risk_mitigants": [
+    {
+      "feature": "alt_credit_score",
+      "shap_value": -0.236505,
+      "actual_value": 777.0,
+      "human_readable": "Credit score equivalent: 777",
+      "direction": "decreases_risk",
+      "magnitude": "high"
+    },
+    {
+      "feature": "ever_defaulted",
+      "shap_value": -0.031055,
+      "actual_value": 0.0,
+      "human_readable": "No prior loan defaults",
+      "direction": "decreases_risk",
+      "magnitude": "medium"
+    },
+    {
+      "feature": "emp_Gig",
+      "shap_value": -0.024164,
+      "actual_value": 0.0,
+      "human_readable": "emp_Gig: 0.0000",
+      "direction": "decreases_risk",
+      "magnitude": "medium"
+    },
+    {
+      "feature": "emp_SelfEmployed",
+      "shap_value": -0.009629,
+      "actual_value": 1.0,
+      "human_readable": "Employment type: Self-employed",
+      "direction": "decreases_risk",
+      "magnitude": "low"
+    },
+    {
+      "feature": "upi_inflow_avg_inr_scaled",
+      "shap_value": -0.002831,
+      "actual_value": -0.648621,
+      "human_readable": "Average UPI inflow: INR 23467",
+      "direction": "decreases_risk",
+      "magnitude": "low"
+    }
+  ],
+  "thin_file_explanation": null,
+  "feature_group_contributions": {
+    "Credit signals": -0.268438,
+    "Income & capacity": -0.001476,
+    "Loan stress": -0.002826,
+    "UPI behavior": 0.048701,
+    "Employment profile": -0.034127,
+    "Thin-file signals": -0.000494,
+    "Loan structure": 0.000537,
+    "Geography": -0.000211
+  },
+  "counterfactuals": [
+    {
+      "action": "Increase UPI transaction activity",
+      "feature": "upi_engagement_score",
+      "current_value_human": "UPI activity: 146 transactions/month",
+      "suggested_value_human": "UPI activity: 192 transactions/month",
+      "estimated_probability_reduction": 0.099156,
+      "new_predicted_probability": 0.184513,
+      "new_risk_label": "Low",
+      "feasibility": "hard"
+    },
+    {
+      "action": "Increase UPI transaction activity",
+      "feature": "upi_engagement_score",
+      "current_value_human": "UPI activity: 146 transactions/month",
+      "suggested_value_human": "UPI activity: 161 transactions/month",
+      "estimated_probability_reduction": 0.096028,
+      "new_predicted_probability": 0.187641,
+      "new_risk_label": "Low",
+      "feasibility": "medium"
+    },
+    {
+      "action": "Increase UPI transaction activity",
+      "feature": "upi_engagement_score",
+      "current_value_human": "UPI activity: 146 transactions/month",
+      "suggested_value_human": "UPI activity: 177 transactions/month",
+      "estimated_probability_reduction": 0.096028,
+      "new_predicted_probability": 0.187641,
+      "new_risk_label": "Low",
+      "feasibility": "medium"
+    }
+  ]
+}
